@@ -79,7 +79,7 @@ const About = () => {
           <li><a href="https://drive.google.com/file/d/1iMUoQcNAOYVOTomwoSPsgjHkCHkVXqV1/view" target="_blank" style={{ color: "#2980b9", textDecoration: "none" }}>Web Development – Oyasis Infobite</a></li>
           <li><a href="https://drive.google.com/file/d/1GGapljE1mXJ6oZPsGqgz4TY2dI_G4DM0/view" target="_blank" style={{ color: "#2980b9", textDecoration: "none" }}>Java Programming – Internpe</a></li>
           <li style={{ color: "#2980b9", textDecoration: "none" }}>
-  FullStack Development - Besant Technologies
+  Java FullStack Development - Besant Technologies
 </li>
 
 
