@@ -75,7 +75,7 @@ const About = () => {
       <section className="section fade-in" style={{ backgroundColor: "#d5dbdb", padding: "30px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "20px" }}>
         <h2 style={{ color: "#2c3e50", textAlign: "center" }}>Certifications</h2>
         <ul>
-          <li><a href="/eduskills.pdf" target="_blank" style={{ color: "#2980b9", textDecoration: "none" }}>Embedded Developer Virtual Internship – AICTE EduSkills</a></li>
+          <li><a href="https://drive.google.com/file/d/1dyyuGmm9oi-aBCZTiaeYwU2jw3eE4yWM/view?usp=drivesdk" target="_blank" style={{ color: "#2980b9", textDecoration: "none" }}>Embedded Developer Virtual Internship – AICTE EduSkills</a></li>
           <li><a href="https://drive.google.com/file/d/1iMUoQcNAOYVOTomwoSPsgjHkCHkVXqV1/view" target="_blank" style={{ color: "#2980b9", textDecoration: "none" }}>Web Development – Oyasis Infobite</a></li>
           <li><a href="https://drive.google.com/file/d/1GGapljE1mXJ6oZPsGqgz4TY2dI_G4DM0/view" target="_blank" style={{ color: "#2980b9", textDecoration: "none" }}>Java Programming – Internpe</a></li>
           <li style={{ color: "#2980b9", textDecoration: "none" }}>
