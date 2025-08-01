@@ -3,7 +3,7 @@ import "../App.css";
 
 const About = () => {
   return (
-    <div className="about" style={{ backgroundColor: "#f0f4f8", padding: "50px 0" }}>
+    <div className="about" style={{ backgroundColor: "#d4d4ddff", padding: "50px 0" }}>
       {/* Education Section */}
       <section className="section fade-in" style={{ backgroundColor: "#f0f8ff", padding: "30px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "20px" }}>
         <h2 style={{ color: "#2c3e50", textAlign: "center" }}>Education</h2>
@@ -46,7 +46,7 @@ const About = () => {
 
       {/* Projects Section */}
       <section className="section fade-in" style={{ backgroundColor: "#f9f9f9", padding: "30px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "20px" }}>
-        <h2 style={{ color: "#2c3e50", textAlign: "center" }}>Projects</h2>
+        <h2 style={{ color: "#2c3e50", textAlign: "center" }}> Acedemic Projects</h2>
         <div className="card" style={{ backgroundColor: "#ffffff", padding: "20px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "15px" }}>
           <h4 style={{ color: "#2980b9" }}>Railway Track Crack Detection Vehicle</h4>
           <p><i>(IoT and Image Processing)</i></p>
@@ -75,7 +75,17 @@ const About = () => {
       <section className="section fade-in" style={{ backgroundColor: "#d5dbdb", padding: "30px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "20px" }}>
         <h2 style={{ color: "#2c3e50", textAlign: "center" }}>Certifications</h2>
         <ul>
-          <li><a href="https://drive.google.com/file/d/1dyyuGmm9oi-aBCZTiaeYwU2jw3eE4yWM/view?usp=drivesdk" target="_blank" style={{ color: "#2980b9", textDecoration: "none" }}>Embedded Developer Virtual Internship – AICTE EduSkills</a></li>
+        <li>
+  <a
+    href="https://drive.google.com/file/d/1dyyuGmm9oi-aBCZTiaeYwU2jw3eE4yWM/view?usp=drivesdk"
+    target="_blank"
+    rel="noreferrer"
+    style={{ color: "#2980b9", textDecoration: "none" }}
+  >
+    Embedded Developer Virtual Internship – AICTE EduSkills
+  </a>
+</li>
+
           <li><a href="https://drive.google.com/file/d/1iMUoQcNAOYVOTomwoSPsgjHkCHkVXqV1/view" target="_blank" style={{ color: "#2980b9", textDecoration: "none" }}>Web Development – Oyasis Infobite</a></li>
           <li><a href="https://drive.google.com/file/d/1GGapljE1mXJ6oZPsGqgz4TY2dI_G4DM0/view" target="_blank" style={{ color: "#2980b9", textDecoration: "none" }}>Java Programming – Internpe</a></li>
           <li style={{ color: "#2980b9", textDecoration: "none" }}>
