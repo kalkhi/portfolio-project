@@ -408,23 +408,28 @@ a {
   box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
   background: linear-gradient(135deg, #04045d, #02021e);
 }
-
 @media (max-width: 768px) {
   .hero-project-btn {
-    flex-direction: row;   /* buttons one below the other */
-    gap: 40px;                /* smaller gap */
-    left: 20%;                /* center align */
-    bottom: 40px;             /* keep a little higher */
-    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;   /* center horizontally */
+    align-items: center;       /* center vertically */
+    gap: 20px; 
+    padding-top: 90px;  
+    padding-right: 350px;              /* space between buttons */
+    flex-wrap: nowrap;         /* keep in one row */
+    overflow: hidden;          /* no overflow */
+    position: relative;
+    bottom: 40px;
   }
 
   .projects-btn {
-    width: 170px;             /* smaller button */
-    height: 170px;
-    font-size: 14px;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+    width: 130px;   /* slightly smaller for mobile */
+    height: 130px;
+    font-size: 13px;
   }
 }
+
+
 
 
 /* ===== Section Spacing (Projects vs Contact) ===== */
