@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "emailjs-com";
 import "../App.css";
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_5upqtw5",        // ✅ Your Service ID
+        "template_9ba6tn7",        // 🔄 Replace with your actual Template ID
+        form.current,
+        "dPAL_uL8GsLbytsWI"       // ✅ Your Public Key
+      )
+      .then(
+        (result) => {
+          alert("✅ Message sent successfully!");
+          form.current.reset();
+        },
+        (error) => {
+          alert("❌ Failed to send message, try again later.");
+          console.error(error.text);
+        }
+      );
+  };
+
   return (
     <div
       className="contact-page"
@@ -59,8 +84,22 @@ const Contact = () => {
           </a>
         </div>
       </section>
+
+      {/* Contact Form */}
+      <section className="contact-form fade-in">
+        <h3 style={{ color: "white" }}>Send a Message</h3>
+        <form ref={form} onSubmit={sendEmail} className="form-container">
+          <input type="text" name="user_name" placeholder="Your Name" required />
+          <input type="email" name="user_email" placeholder="Your Email" required />
+          <input type="text" name="user_phone" placeholder="Your Phone Number" required />
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </section>
     </div>
   );
 };
 
 export default Contact;
+
+

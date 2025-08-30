@@ -1,113 +1,218 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "../App.css";
+
+// Animation Variants
+const fadeUp = {
+  hidden: { opacity: 0, y: 60 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const fadeLeft = {
+  hidden: { opacity: 0, x: -80 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const fadeRight = {
+  hidden: { opacity: 0, x: 80 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const staggerChildren = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.25 } },
+};
+
+const sectionStyle = {
+  backgroundColor: "#001d3d",
+  padding: "30px",
+  borderRadius: "10px",
+  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.6)",
+  marginBottom: "20px",
+};
+
+const cardStyle = {
+  backgroundColor: "#003566",
+  padding: "15px",
+  borderRadius: "8px",
+  marginBottom: "15px",
+};
 
 const About = () => {
   return (
-    <div className="about" style={{ backgroundColor: "#d4d4ddff", padding: "50px 0" }}>
+    <motion.div
+      className="about"
+      style={{ backgroundColor: "#000814", padding: "50px 0" }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       {/* Education Section */}
-      <section className="section fade-in" style={{ backgroundColor: "#f0f8ff", padding: "30px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "20px" }}>
-        <h2 style={{ color: "#2c3e50", textAlign: "center" }}>Education</h2>
-        <div className="card" style={{ backgroundColor: "#ffffff", padding: "20px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "15px" }}>
-          <h4 style={{ color: "#3498db" }}>B.Tech (2020–2024)</h4>
-          <p>Gitam University – ECE – CGPA: 7.3</p>
-        </div>
-        <div className="card" style={{ backgroundColor: "#ffffff", padding: "20px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "15px" }}>
-          <h4 style={{ color: "#2ecc71" }}>Intermediate (2018–2020)</h4>
-          <p>Sri Chaitanya Junior College – MPC – CGPA: 9.4</p>
-        </div>
-        <div className="card" style={{ backgroundColor: "#ffffff", padding: "20px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "15px" }}>
-          <h4 style={{ color: "#e67e22" }}>Schooling (2018)</h4>
-          <p>Sri Chaitanya Children’s Academy – SSC – CGPA: 8.5</p>
-        </div>
-      </section>
+      <motion.section className="section" variants={fadeUp} style={sectionStyle}>
+        <motion.h2
+          style={{ color: "#00b4d8", textAlign: "center" }}
+          variants={fadeUp}
+        >
+          Education
+        </motion.h2>
+        <motion.div variants={staggerChildren}>
+          <motion.div className="card" variants={fadeLeft} style={cardStyle}>
+            <h4 style={{ color: "#a8dee9ff" }}>B.Tech (2020–2024)</h4>
+            <p style={{ color: "white" }}>
+              Gitam University – ECE – CGPA: 7.3
+            </p>
+          </motion.div>
+          <motion.div className="card" variants={fadeRight} style={cardStyle}>
+            <h4 style={{ color: "#a8dee9ff" }}>Intermediate (2018–2020)</h4>
+            <p style={{ color: "#e0e0e0" }}>
+              Sri Chaitanya Junior College – MPC – CGPA: 9.4
+            </p>
+          </motion.div>
+          <motion.div className="card" variants={fadeLeft} style={cardStyle}>
+            <h4 style={{ color: "#a8dee9ff" }}>Schooling (2018)</h4>
+            <p style={{ color: "#e0e0e0" }}>
+              Sri Chaitanya Children’s Academy – SSC – CGPA: 8.5
+            </p>
+          </motion.div>
+        </motion.div>
+      </motion.section>
 
       {/* Skills Section */}
-      <section className="section fade-in" style={{ backgroundColor: "#ecf0f1", padding: "30px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "20px" }}>
-        <h2 style={{ color: "#2c3e50", textAlign: "center" }}>Skills</h2>
-        <div className="skills-grid">
-          <div className="card" style={{ backgroundColor: "#ffffff", padding: "20px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "15px" }}>
-            <h4 style={{ color: "#9b59b6" }}>Programming Languages</h4>
-            <p>Java | Python</p>
-          </div>
-          <div className="card" style={{ backgroundColor: "#ffffff", padding: "20px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "15px" }}>
-            <h4 style={{ color: "#f39c12" }}>Web Technologies</h4>
-            <p>React JS | CSS | JavaScript | HTML</p>
-          </div>
-          <div className="card" style={{ backgroundColor: "#ffffff", padding: "20px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "15px" }}>
-            <h4 style={{ color: "#e74c3c" }}>Tools / Platforms</h4>
-            <p>GitHub | VS Code | MATLAB | MS Office</p>
-          </div>
-          <div className="card" style={{ backgroundColor: "#ffffff", padding: "20px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "15px" }}>
-            <h4 style={{ color: "#3498db" }}>Database</h4>
-            <p>SQL</p>
-          </div>
-        </div>
-      </section>
+      <motion.section className="section" variants={fadeUp} style={sectionStyle}>
+        <motion.h2
+          style={{ color: "#00b4d8", textAlign: "center" }}
+          variants={fadeUp}
+        >
+          Skills
+        </motion.h2>
+        <motion.div className="skills-grid" variants={staggerChildren}>
+          <motion.div className="card" variants={fadeLeft} style={cardStyle}>
+            <h4 style={{ color: "#a8dee9ff" }}>Programming Languages</h4>
+            <p style={{ color: "#e0e0e0" }}>Java | Python</p>
+          </motion.div>
+          <motion.div className="card" variants={fadeRight} style={cardStyle}>
+            <h4 style={{ color: "#a8dee9ff" }}>Web Technologies</h4>
+            <p style={{ color: "#e0e0e0" }}>React JS | CSS | JavaScript | HTML</p>
+          </motion.div>
+          <motion.div className="card" variants={fadeLeft} style={cardStyle}>
+            <h4 style={{ color: "#a8dee9ff" }}>Tools / Platforms</h4>
+            <p style={{ color: "#e0e0e0" }}>GitHub | VS Code | MATLAB | MS Office</p>
+          </motion.div>
+          <motion.div className="card" variants={fadeRight} style={cardStyle}>
+            <h4 style={{ color: "#a8dee9ff" }}>Database</h4>
+            <p style={{ color: "#e0e0e0" }}>SQL</p>
+          </motion.div>
+        </motion.div>
+      </motion.section>
 
       {/* Projects Section */}
-      <section className="section fade-in" style={{ backgroundColor: "#f9f9f9", padding: "30px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "20px" }}>
-        <h2 style={{ color: "#2c3e50", textAlign: "center" }}> Acedemic Projects</h2>
-        <div className="card" style={{ backgroundColor: "#ffffff", padding: "20px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "15px" }}>
-          <h4 style={{ color: "#2980b9" }}>Railway Track Crack Detection Vehicle</h4>
-          <p><i>(IoT and Image Processing)</i></p>
-          <ul>
-            <li>Designed a cart that detects cracks on railway tracks</li>
-            <li>Used LED–LDR system + Image processing for accuracy</li>
-          </ul>
-        </div>
-        <div className="card" style={{ backgroundColor: "#ffffff", padding: "20px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "15px" }}>
-          <h4 style={{ color: "#e67e22" }}>Line Follower Robot</h4>
-          <p><i>(Tetrix Prizm)</i></p>
-          <ul>
-            <li>Used IR sensor to follow a predefined path</li>
-          </ul>
-        </div>
-        <div className="card" style={{ backgroundColor: "#ffffff", padding: "20px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "15px" }}>
-          <h4 style={{ color: "#8e44ad" }}>Weather Monitoring System</h4>
-          <p><i>(Arduino UNO + IDE)</i></p>
-          <ul>
-            <li>Monitors temperature, pressure, humidity & rain</li>
-          </ul>
-        </div>
-      </section>
+      <motion.section className="section" variants={fadeUp} style={sectionStyle}>
+        <motion.h2
+          style={{ color: "#00b4d8", textAlign: "center" }}
+          variants={fadeUp}
+        >
+          Academic Projects
+        </motion.h2>
+        <motion.div variants={staggerChildren}>
+          <motion.div className="card" variants={fadeLeft} style={cardStyle}>
+            <h4 style={{ color: "#a8dee9ff" }}>
+              Railway Track Crack Detection Vehicle
+            </h4>
+            <p style={{ color: "#e0e0e0" }}>
+              <i>(IoT and Image Processing)</i>
+            </p>
+            <ul style={{ color: "#e0e0e0" }}>
+              <li>Designed a cart that detects cracks on railway tracks</li>
+              <li>Used LED–LDR system + Image processing for accuracy</li>
+            </ul>
+          </motion.div>
+          <motion.div className="card" variants={fadeRight} style={cardStyle}>
+            <h4 style={{ color: "#a8dee9ff" }}>Line Follower Robot</h4>
+            <p style={{ color: "#e0e0e0" }}>
+              <i>(Tetrix Prizm)</i>
+            </p>
+            <ul style={{ color: "#e0e0e0" }}>
+              <li>Used IR sensor to follow a predefined path</li>
+            </ul>
+          </motion.div>
+          <motion.div className="card" variants={fadeLeft} style={cardStyle}>
+            <h4 style={{ color: "#a8dee9ff" }}>Weather Monitoring System</h4>
+            <p style={{ color: "#e0e0e0" }}>
+              <i>(Arduino UNO + IDE)</i>
+            </p>
+            <ul style={{ color: "#e0e0e0" }}>
+              <li>Monitors temperature, pressure, humidity & rain</li>
+            </ul>
+          </motion.div>
+        </motion.div>
+      </motion.section>
 
       {/* Certifications Section */}
-      <section className="section fade-in" style={{ backgroundColor: "#d5dbdb", padding: "30px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "20px" }}>
-        <h2 style={{ color: "#2c3e50", textAlign: "center" }}>Certifications</h2>
-        <ul>
-        <li>
-  <a
-    href="https://drive.google.com/file/d/1dyyuGmm9oi-aBCZTiaeYwU2jw3eE4yWM/view?usp=drivesdk"
-    target="_blank"
-    rel="noreferrer"
-    style={{ color: "#2980b9", textDecoration: "none" }}
-  >
-    Embedded Developer Virtual Internship – AICTE EduSkills
-  </a>
-</li>
-
-          <li><a href="https://drive.google.com/file/d/1iMUoQcNAOYVOTomwoSPsgjHkCHkVXqV1/view" target="_blank" style={{ color: "#2980b9", textDecoration: "none" }}>Web Development – Oyasis Infobite</a></li>
-          <li><a href="https://drive.google.com/file/d/1GGapljE1mXJ6oZPsGqgz4TY2dI_G4DM0/view" target="_blank" style={{ color: "#2980b9", textDecoration: "none" }}>Java Programming – Internpe</a></li>
-          <li style={{ color: "#2980b9", textDecoration: "none" }}>
-  Java FullStack Development - Besant Technologies
-</li>
-
-
-        </ul>
-      </section>
+      <motion.section className="section" variants={fadeUp} style={sectionStyle}>
+        <motion.h2
+          style={{ color: "#a8dee9ff", textAlign: "center" }}
+          variants={fadeUp}
+        >
+          Certifications
+        </motion.h2>
+        <motion.ul variants={staggerChildren} style={{ color: "#fafafaff" }}>
+          <motion.li variants={fadeLeft}>
+            <a
+              href="https://drive.google.com/file/d/1dyyuGmm9oi-aBCZTiaeYwU2jw3eE4yWM/view?usp=drivesdk"
+              target="_blank"
+              rel="noreferrer"
+              style={{ color: "#e5ebecff", textDecoration: "none" }}
+            >
+              Embedded Developer Virtual Internship – AICTE EduSkills
+            </a>
+          </motion.li>
+          <motion.li variants={fadeRight}>
+            <a
+              href="https://drive.google.com/file/d/1iMUoQcNAOYVOTomwoSPsgjHkCHkVXqV1/view"
+              target="_blank"
+              rel="noreferrer"
+              style={{ color: "#eff6f8ff", textDecoration: "none" }}
+            >
+              Web Development – Oyasis Infobite
+            </a>
+          </motion.li>
+          <motion.li variants={fadeLeft}>
+            <a
+              href="https://drive.google.com/file/d/1GGapljE1mXJ6oZPsGqgz4TY2dI_G4DM0/view"
+              target="_blank"
+              rel="noreferrer"
+              style={{ color: "#fefefeff", textDecoration: "none" }}
+            >
+              Java Programming – Internpe
+            </a>
+          </motion.li>
+          <motion.li variants={fadeRight} style={{ color: "#f9f9f9ff" }}>
+            Java FullStack Development - Besant Technologies
+          </motion.li>
+        </motion.ul>
+      </motion.section>
 
       {/* Honors & Awards Section */}
-      <section className="section fade-in" style={{ backgroundColor: "#f7f9f9", padding: "30px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", marginBottom: "20px" }}>
-        <h2 style={{ color: "#2c3e50", textAlign: "center" }}>Honors & Awards</h2>
-        <ul>
-          <li>Runner-up in IoT Workshop at Gitam University</li>
-        </ul>
-      </section>
-    </div>
+      <motion.section className="section" variants={fadeUp} style={sectionStyle}>
+        <motion.h2
+          style={{ color: "#60c0e2ff", textAlign: "center" }}
+          variants={fadeUp}
+        >
+          Honors & Awards
+        </motion.h2>
+        <motion.ul variants={staggerChildren} style={{ color: "#e0e0e0" }}>
+          <motion.li variants={fadeLeft}>
+            Runner-up in IoT Workshop at Gitam University
+          </motion.li>
+        </motion.ul>
+      </motion.section>
+    </motion.div>
   );
 };
 
 export default About;
+
+
 
 
 
